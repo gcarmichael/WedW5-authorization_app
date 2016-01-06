@@ -1,2 +1,29 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<h1>Articles</h1>
+
+<% if can? :create, Article %>
+<%= link_to 'New Article', articles_new_path %>
+<% end %>
+
+<p>
+  <% @articles.each do |article| %>
+
+  <ul>
+    <li><%= article.title %></li>
+    <li><%= article.content if article.content %></li>
+  </ul>
+
+  <% if can? :update, Article %>
+  <%= link_to("Edit Article", articles_edit_path(article)) %>
+  <br>
+  <% end %>
+  
+  <% if can? :manage, Article %>
+  <%= link_to("Delete Article", articles_index_path, method: :delete, data: {confirm: "Do you wish to delete this article?"}) %>
+  <br>
+  <% end %>
+
+  <hr>
+  <% end %>
+
+</p>
+

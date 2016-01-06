@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'comment/index'
+  get 'comments/index'
 
-  get 'comment/show'
+  get 'comments/show'
 
-  get 'comment/new'
+  get 'comments/new'
 
-  get 'comment/edit'
+  get 'comments/edit'
 
-  get 'comment/create'
+  get 'comments/create'
 
-  get 'comment/update'
+  get 'comments/update'
 
-  get 'comment/destroy'
+  get 'comments/destroy'
 
   get 'articles/index'
 
